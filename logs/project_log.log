@@ -1,0 +1,5 @@
+2025-03-09 22:32:33.056 | INFO     | __main__:main:41 - Starting data preparation...
+2025-03-09 22:32:33.059 | INFO     | __main__:read_raw_data:26 - Reading raw data from C:\Projects\MS_Data_Analytics\BI_Analytics\smart-store-block\data\raw\customers_data.csv.
+2025-03-09 22:32:33.122 | INFO     | __main__:read_raw_data:26 - Reading raw data from C:\Projects\MS_Data_Analytics\BI_Analytics\smart-store-block\data\raw\products_data.csv.
+2025-03-09 22:32:33.131 | INFO     | __main__:read_raw_data:26 - Reading raw data from C:\Projects\MS_Data_Analytics\BI_Analytics\smart-store-block\data\raw\sales_data.csv.
+2025-03-09 22:32:33.142 | INFO     | __main__:main:45 - Data preparation complete.
