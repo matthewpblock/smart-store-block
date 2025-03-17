@@ -1,9 +1,9 @@
-ProductID,ProductName,Category,UnitPrice
-101,laptop,Electronics,793.12
-102,hoodie,Clothing,39.1
-103,cable,Electronics,22.76
-104,hat,Clothing,43.1
-105,football,Sports,19.78
-106,controller,Electronics,88.98
-107,jacket,Clothing,67.02
-108,protector,Electronics,12.56
+ProductID,ProductName,Category,UnitPrice,WholesalePrice,Supplier
+101,laptop,Electronics,793.12,500,Samsung
+102,hoodie,Clothing,39.1,30,Under Armour
+103,cable,Electronics,22.76,18,Samsung
+104,hat,Clothing,43.1,17,Under Armour
+105,football,Sports,19.78,12,Spalding
+106,controller,Electronics,88.98,30,Nintendo
+107,jacket,Clothing,67.02,40,Under Armour
+108,protector,Electronics,12.56,2,Nintendo
