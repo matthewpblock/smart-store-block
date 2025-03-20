@@ -1,9 +1,14 @@
 import pandas as pd
+import sys
 import os
 
+# Get the path to the directory containing 'utils' (assuming it's two levels up)
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+ # Add the parent directory to sys.path
+sys.path.append(parent_dir)
+ 
 # Local Imports
 from utils.logger import logger
-import data_prep as dp
 
 ########################################
 # Functions
@@ -64,7 +69,7 @@ def main() -> None:
     logger.info("Starting data preparation...")
 
     try:
-        df_customers = pd.read_csv("customers_data.csv")
+        df_customers = pd.read_csv("data/raw/customers_data.csv")
         expected_cols = {
             "CustomerID": "int64",
             "Name": "object",
