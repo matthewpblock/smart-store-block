@@ -56,8 +56,10 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def remove_outliers(df: pd.DataFrame) -> pd.DataFrame:
-    """Removes outliers based on age (less than 13 or greater than 150)."""
-    df_filtered = df[(df['Age'] >= 13) & (df['Age'] <= 150)]
+    """Removes sales data where SaleDate is before 2000-01-01."""
+    cutoff_date = pd.to_datetime('2000-01-01')  # Define the cutoff date
+    df_filtered = df[df['SaleDate'] >= cutoff_date]
+
     return df_filtered
 
 
@@ -69,37 +71,40 @@ def main() -> None:
     logger.info("Starting data preparation...")
 
     try:
-        df_customers = pd.read_csv("data/raw/customers_data.csv")
+        df_sales = pd.read_csv("data/raw/sales_data.csv")
         expected_cols = {
+            "TransactionID": "int64",
+            "SaleDate": "datetime64[ns]",  #Note:  SaleDate is not datetime64 in the provided data
+            "ProductID": "int64",
+            "StoreID": "int64",
             "CustomerID": "int64",
-            "Name": "object",
-            "Region": "object",
-            "JoinDate": "datetime64[ns]",  #Note:  JoinDate is not datetime64 in the provided data
-            "Sex": "object",
-            "Age": "int64",
+            "CampaignID": "int64",
+            "SaleAmount": "float64",
+            "LoyaltyPoints": "int64",
+            "PaymentType": "object",
         }
         # Convert JoinDate to datetime before verifying columns
-        df_customers["JoinDate"] = pd.to_datetime(df_customers["JoinDate"])
+        df_sales["SaleDate"] = pd.to_datetime(df_sales["SaleDate"])
         
-        if verify_columns(df_customers, expected_cols):
+        if verify_columns(df_sales, expected_cols):
             logger.info("Proceeding with data processing...")
-            df_customers = remove_duplicates(df_customers)
-            df_customers = remove_outliers(df_customers)
+            df_sales = remove_duplicates(df_sales)
+            df_sales = remove_outliers(df_sales)
 
             # Create the 'data/prepared' directory if it doesn't exist
             prepared_data_dir = "data/prepared"
             os.makedirs(prepared_data_dir, exist_ok=True)
 
             # Write the processed DataFrame to a CSV file in the 'data/prepared' directory
-            output_filepath = os.path.join(prepared_data_dir, "customers_data_prepared.csv")
-            df_customers.to_csv(output_filepath, index=False)  # index=False prevents writing the index
+            output_filepath = os.path.join(prepared_data_dir, "sales_data_prepared.csv")
+            df_sales.to_csv(output_filepath, index=False)  # index=False prevents writing the index
             logger.info(f"Processed data saved to: {output_filepath}")
 
         else:
             logger.error("Data validation failed. Exiting.")
             return
     except FileNotFoundError:
-        logger.error("customers_data.csv not found")
+        logger.error("sales_data.csv not found")
         return
 
     logger.info("Data preparation complete.")
