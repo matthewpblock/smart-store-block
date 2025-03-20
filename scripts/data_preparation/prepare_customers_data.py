@@ -74,10 +74,13 @@ def main() -> None:
             "CustomerID": "int64",
             "Name": "object",
             "Region": "object",
-            "JoinDate": "object",  #Note:  JoinDate is not datetime64 in the provided data
+            "JoinDate": "datetime64[ns]",  #Note:  JoinDate is not datetime64 in the provided data
             "Sex": "object",
             "Age": "int64",
         }
+        # Convert JoinDate to datetime before verifying columns
+        df_customers["JoinDate"] = pd.to_datetime(df_customers["JoinDate"])
+        
         if verify_columns(df_customers, expected_cols):
             logger.info("Proceeding with data processing...")
             df_customers = remove_duplicates(df_customers)
