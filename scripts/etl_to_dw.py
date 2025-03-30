@@ -3,6 +3,9 @@ import sqlite3
 import pathlib
 import sys
 
+# Import local modules
+import utils.logger as logger
+
 # For local imports, temporarily add project root to sys.path
 PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
@@ -10,8 +13,32 @@ if str(PROJECT_ROOT) not in sys.path:
 
 # Constants
 DW_DIR = pathlib.Path("data").joinpath("dw")
-DB_PATH = DW_DIR.joinpath("smart_sales.db")
+DB_PATH = DW_DIR.joinpath("block_smart_sales.db")
 PREPARED_DATA_DIR = pathlib.Path("data").joinpath("prepared")
+
+###################################################################
+# Functions
+###################################################################
+def execute_sql_file(connection, file_path) -> None:
+    """
+    Executes a SQL file using the provided SQLite connection.
+
+    Args:
+        connection (sqlite3.Connection): SQLite connection object.
+        file_path (str): Path to the SQL file to be executed.
+    """
+    # We know reading from a file can raise exceptions, so we wrap it in a try block
+    try:
+        with open(file_path, 'r') as file:
+            # Read the SQL file into a string
+            sql_script: str = file.read()
+        with connection:
+            # Use the connection as a context manager to execute the SQL script
+            connection.executescript(sql_script)
+            logger.info(f"Executed: {file_path}")
+    except Exception as e:
+        logger.error(f"Failed to execute {file_path}: {e}")
+        raise
 
 def create_schema(cursor: sqlite3.Cursor) -> None:
     """Create tables in the data warehouse if they don't exist."""
