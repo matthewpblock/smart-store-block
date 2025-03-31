@@ -1,4 +1,5 @@
 # Smart-Store-Block
+## Description
 This project was created for the Business Intelligence and Analytics course under the instruction of Dr. Denise Case as part of the M.S. in Data Analytics program at Northwest Missouri State University.
 - dwbuilder.py was designed to be a reusable module for building databases or data warehouses from CSVs. I plan to incorporate more functions for other source types in the future.
 - etl_to_dw.py was designed to be a minimized script employing the functions from dwbuilder to build the data warehouse or database, where the items unique to the project (i.e. table names, file paths, etc.) can be easily updated and the script run for various projects.
