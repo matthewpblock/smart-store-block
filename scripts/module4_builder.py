@@ -9,11 +9,12 @@ import scripts.dwbuilder as dwb
 DW_DIR = pathlib.Path("data").joinpath("dw")
 DB_PATH = DW_DIR.joinpath("block_smart_sales.db")
 PREPARED_DATA_DIR = pathlib.Path("data").joinpath("prepared")
+SQL_PATH = pathlib.Path("scripts/schema.sql")
 
-conn = sqlite3.connect("your_database.db")
+conn = sqlite3.connect("block_smart_store.db")
 
 # Build the data warehouse from the schema file
-dwb.execute_sql_file(conn, "schema.sql")
+dwb.execute_sql_file(DB_PATH, SQL_PATH)
 
 # Load data from 'customers.csv' into the 'customers' table, deleting existing records first.
 dwb.csv_to_dw("customers.csv", conn, "customers")
