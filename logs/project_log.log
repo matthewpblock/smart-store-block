@@ -110,3 +110,39 @@
 2025-03-20 17:18:10.586 | INFO     | __main__:main:85 - Proceeding with data processing...
 2025-03-20 17:18:10.599 | INFO     | __main__:main:96 - Processed data saved to: data/prepared\customers_data_prepared.csv
 2025-03-20 17:18:10.599 | INFO     | __main__:main:105 - Data preparation complete.
+2025-03-30 23:11:34.860 | INFO     | dwbuilder:execute_sql_file:36 - Executed: scripts\schema.sql
+2025-03-30 23:11:34.889 | ERROR    | dwbuilder:load_csv:74 - Failed to load CSV file data\prepared\customers.csv: [Errno 2] No such file or directory: 'data\\prepared\\customers.csv'
+2025-03-30 23:12:36.848 | INFO     | dwbuilder:execute_sql_file:36 - Executed: scripts\schema.sql
+2025-03-30 23:12:36.901 | INFO     | dwbuilder:load_csv:71 - Loaded CSV file: data\prepared\customers_data_prepared.csv
+2025-03-30 23:21:16.947 | INFO     | dwbuilder:execute_sql_file:37 - Executed: scripts\schema.sql
+2025-03-30 23:21:16.955 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\customers_data_prepared.csv
+2025-03-30 23:21:16.957 | INFO     | dwbuilder:convert_to_sql_format:99 - Converted DataFrame column names to lowercase and removed special characters.
+2025-03-30 23:21:16.970 | ERROR    | dwbuilder:load_data_to_dw:119 - Failed to load data into customers: table customers has no column named customerid
+2025-03-30 23:28:25.536 | INFO     | dwbuilder:execute_sql_file:37 - Executed: scripts\schema.sql
+2025-03-30 23:28:25.554 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\customers_data_prepared.csv
+2025-03-30 23:28:25.572 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-30 23:28:25.596 | INFO     | dwbuilder:load_data_to_dw:119 - Loaded data into customers table
+2025-03-30 23:28:25.602 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\products_data_prepared.csv
+2025-03-30 23:28:25.602 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-30 23:28:25.609 | INFO     | dwbuilder:load_data_to_dw:119 - Loaded data into products table
+2025-03-30 23:28:25.613 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\sales_data_prepared.csv
+2025-03-30 23:28:25.613 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-30 23:28:25.616 | ERROR    | dwbuilder:load_data_to_dw:121 - Failed to load data into sales: table sales has no column named campaign_id
+2025-03-30 23:37:17.981 | INFO     | dwbuilder:execute_sql_file:37 - Executed: scripts\schema.sql
+2025-03-30 23:37:18.000 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\customers_data_prepared.csv
+2025-03-30 23:37:18.005 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-30 23:37:18.062 | ERROR    | dwbuilder:load_data_to_dw:145 - An unexpected error occurred while loading data into customers: UNIQUE constraint failed: customers.customer_id
+2025-03-30 23:38:49.027 | INFO     | dwbuilder:execute_sql_file:37 - Executed: scripts\schema.sql
+2025-03-30 23:38:49.036 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\customers_data_prepared.csv
+2025-03-30 23:38:49.055 | INFO     | dwbuilder:delete_existing_records:55 - Deleted all records from table: customers
+2025-03-30 23:38:49.056 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-30 23:38:49.067 | INFO     | dwbuilder:load_data_to_dw:137 - Loaded data into customers table (ignoring non-existent columns)
+2025-03-30 23:38:49.070 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\products_data_prepared.csv
+2025-03-30 23:38:49.070 | INFO     | dwbuilder:delete_existing_records:55 - Deleted all records from table: products
+2025-03-30 23:38:49.074 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-30 23:38:49.084 | INFO     | dwbuilder:load_data_to_dw:137 - Loaded data into products table (ignoring non-existent columns)
+2025-03-30 23:38:49.087 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\sales_data_prepared.csv
+2025-03-30 23:38:49.087 | INFO     | dwbuilder:delete_existing_records:55 - Deleted all records from table: sales
+2025-03-30 23:38:49.093 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-30 23:38:49.104 | INFO     | dwbuilder:load_data_to_dw:133 - Columns filtered out for table 'sales': campaign_id
+2025-03-30 23:38:49.112 | INFO     | dwbuilder:load_data_to_dw:137 - Loaded data into sales table (ignoring non-existent columns)
