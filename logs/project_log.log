@@ -146,3 +146,17 @@
 2025-03-30 23:38:49.093 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
 2025-03-30 23:38:49.104 | INFO     | dwbuilder:load_data_to_dw:133 - Columns filtered out for table 'sales': campaign_id
 2025-03-30 23:38:49.112 | INFO     | dwbuilder:load_data_to_dw:137 - Loaded data into sales table (ignoring non-existent columns)
+2025-03-31 07:47:38.524 | INFO     | dwbuilder:execute_sql_file:37 - Executed: scripts\schema.sql
+2025-03-31 07:47:38.530 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\customers_data_prepared.csv
+2025-03-31 07:47:38.533 | INFO     | dwbuilder:delete_existing_records:55 - Deleted all records from table: customers
+2025-03-31 07:47:38.536 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-31 07:47:38.543 | INFO     | dwbuilder:load_data_to_dw:137 - Loaded data into customers table (ignoring non-existent columns)
+2025-03-31 07:47:38.546 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\products_data_prepared.csv
+2025-03-31 07:47:38.547 | INFO     | dwbuilder:delete_existing_records:55 - Deleted all records from table: products
+2025-03-31 07:47:38.548 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-31 07:47:38.553 | INFO     | dwbuilder:load_data_to_dw:137 - Loaded data into products table (ignoring non-existent columns)
+2025-03-31 07:47:38.557 | INFO     | dwbuilder:load_csv:72 - Loaded CSV file: data\prepared\sales_data_prepared.csv
+2025-03-31 07:47:38.558 | INFO     | dwbuilder:delete_existing_records:55 - Deleted all records from table: sales
+2025-03-31 07:47:38.558 | INFO     | dwbuilder:convert_to_sql_format:101 - Converted DataFrame column names to lowercase, adding underscores before uppercase letters, and removed special characters.
+2025-03-31 07:47:38.560 | INFO     | dwbuilder:load_data_to_dw:133 - Columns filtered out for table 'sales': campaign_id
+2025-03-31 07:47:38.563 | INFO     | dwbuilder:load_data_to_dw:137 - Loaded data into sales table (ignoring non-existent columns)
