@@ -3,7 +3,7 @@ import sqlite3
 
 
 # Import local modules
-import utils.logger as logger
+import logger
 
 ###################################################################
 # Functions

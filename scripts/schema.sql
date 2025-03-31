@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS customers (
     region TEXT,
     join_date TEXT,
     sex TEXT,
-    age INTEGER,
+    age INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS products (
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS products (
     category TEXT,
     unit_price REAL,
     wholesale_price REAL,
-    supplier TEXT,
+    supplier TEXT
 );
 
 CREATE TABLE IF NOT EXISTS sales (

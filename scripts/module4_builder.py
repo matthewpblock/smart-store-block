@@ -2,7 +2,7 @@ import sqlite3
 import pathlib
 
 # Import local modules
-import scripts.dwbuilder as dwb
+import dwbuilder as dwb
 
 # Constants
 DW_DIR = pathlib.Path("data").joinpath("dw")
