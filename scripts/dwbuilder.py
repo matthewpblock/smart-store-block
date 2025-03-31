@@ -161,7 +161,7 @@ def csv_to_dw(file_path: str, connection: sqlite3.Connection, table_name: str, d
     load_data_to_dw(connection, df, table_name)
 
 ##################################################################
-# Main function to build the data warehouse
+# Main function
 ##################################################################
 if __name__ == "__main__":
     pass
