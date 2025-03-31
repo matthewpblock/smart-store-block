@@ -40,42 +40,28 @@ def execute_sql_file(connection, file_path) -> None:
         logger.error(f"Failed to execute {file_path}: {e}")
         raise
 
-def create_schema(cursor: sqlite3.Cursor) -> None:
-    """Create tables in the data warehouse if they don't exist."""
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS customer (
-            customer_id INTEGER PRIMARY KEY,
-            name TEXT,
-            region TEXT,
-            join_date TEXT
-        )
-    """)
-    
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS product (
-            product_id INTEGER PRIMARY KEY,
-            product_name TEXT,
-            category TEXT
-        )
-    """)
-    
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS sale (
-            sale_id INTEGER PRIMARY KEY,
-            customer_id INTEGER,
-            product_id INTEGER,
-            sale_amount REAL,
-            sale_date TEXT,
-            FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
-            FOREIGN KEY (product_id) REFERENCES product (product_id)
-        )
-    """)
+# def create_schema(cursor: sqlite3.Cursor) -> None:
+#    """Create tables in the data warehouse if they don't exist."""
+#    
+#    """)
 
-def delete_existing_records(cursor: sqlite3.Cursor) -> None:
-    """Delete all existing records from the customer, product, and sale tables."""
-    cursor.execute("DELETE FROM customer")
-    cursor.execute("DELETE FROM product")
-    cursor.execute("DELETE FROM sale")
+def delete_existing_records(cursor: sqlite3.Cursor, **kwargs) -> None:
+    """
+    Delete existing records from specified tables.
+
+    Args:
+        cursor (sqlite3.Cursor): The database cursor.
+        **kwargs: Keyword arguments where keys are table names and values are True (to delete) or False (to skip).
+                  Example: delete_existing_records(cursor, customers=True, products=False, sales=True)
+    """
+    for table_name, should_delete in kwargs.items():
+        if should_delete:
+            try:
+                cursor.execute(f"DELETE FROM {table_name}")
+                logger.info(f"Deleted all records from table: {table_name}")
+            except sqlite3.OperationalError as e:
+                logger.error(f"Error deleting from table {table_name}: {e}")
+                raise
 
 def insert_customers(customers_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
     """Insert customer data into the customer table."""
