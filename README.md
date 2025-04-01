@@ -81,3 +81,7 @@ py scripts/data_prep.py
 ## Data Warehouse Schema
 This project aggregates data from three CSVs into a combined SQLite data warehouse, with each CSV populating a table. The sales/transaction data serves as the fact table and the other data serve as the dimension tables.  
 You can see the the schema with foreign key connections in the following screenshots:  
+- ![Customers table](images/customers_table.png)  Customers Table
+- ![Products table](images/products_table.png)  Products Table
+- ![Sales table](images/sales_table.png)  Sales Table
+
