@@ -1,12 +1,13 @@
 # Smart-Store-Block
 ## Description
-This project was created for the Business Intelligence and Analytics course under the instruction of Dr. Denise Case as part of the M.S. in Data Analytics program at Northwest Missouri State University.
+This project was created for the Business Intelligence and Analytics course under the instruction of Dr. Denise Case as part of the M.S. in Data Analytics program at Northwest Missouri State University.  
+It builds a data warehouse using python and SQL scripts to Extract, Transform, and Load data originating in multiple CSVs to an sqlite database.
 - dwbuilder.py was designed to be a reusable module for building databases or data warehouses from CSVs. I plan to incorporate more functions for other source types in the future.
 - etl_to_dw.py was designed to be a minimized script employing the functions from dwbuilder to build the data warehouse or database, where the items unique to the project (i.e. table names, file paths, etc.) can be easily updated and the script run for various projects.
 - schema.sql is customized to the data required for this project including primary and foreign keys
 - logger.py defines the logging functions
 
-## Project Setup Guide (2-Windows)
+## Project Setup Guide (Windows)
 
 Run all commands from a PowerShell terminal in the root project folder.
 
@@ -43,7 +44,6 @@ py scripts/data_prep.py
 -----
 
 ## Initial Package List
-
 - pip
 - loguru
 - ipykernel
@@ -73,7 +73,11 @@ py scripts/data_prep.py
 - Checks the columns based on the arguments set (including converting WholesalePrice field to float)
 - Removes duplicates### prepare_sales_data.py
 
-## prepare_sales_data.py
+### prepare_sales_data.py
 - Checks the columns based on the arguments set
 - Removes duplicates
 - Filters out records with SaleDate before 1 Jan 2000
+
+## Data Warehouse Schema
+This project aggregates data from three CSVs into a combined SQLite data warehouse, with each CSV populating a table. The sales/transaction data serves as the fact table and the other data serve as the dimension tables.  
+You can see the the schema with foreign key connections in the following screenshots:  
