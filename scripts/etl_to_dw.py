@@ -14,7 +14,7 @@ from utils.logger import logger
 import dwbuilder as dwb
 
 ##############################################
-# Constants
+# Constants (UPDATE PATHS TO CUSTOMIZE)
 ##############################################
 DW_DIR = pathlib.Path("data").joinpath("dw")
 DB_PATH = DW_DIR.joinpath("block_smart_sales.db")
@@ -27,15 +27,18 @@ DW_DIR.mkdir(parents=True, exist_ok=True)
 # Connect to the database
 conn = sqlite3.connect(str(DB_PATH))
 
-# Build the data warehouse from the schema file
-dwb.execute_sql_file(conn, SQL_PATH)
-
-# Construct the full paths to the CSV files
+# Construct the full paths to the CSV files (UPDATE SOURCES TO CUSTOMIZE)
 customers_csv_path = PREPARED_DATA_DIR.joinpath("customers_data_prepared.csv")
 products_csv_path = PREPARED_DATA_DIR.joinpath("products_data_prepared.csv")
 sales_csv_path = PREPARED_DATA_DIR.joinpath("sales_data_prepared.csv")
 
-# Load data from 'customers.csv' into the 'customers' table
+################################################
+# Execution Scripts
+################################################
+# Build the data warehouse from the schema file
+dwb.execute_sql_file(conn, SQL_PATH)
+
+# Load data from 'customers.csv' into the 'customers' table (UPDATE ARGUMENTS TO CUSTOMIZE)
 dwb.csv_to_dw(str(customers_csv_path), conn, "customers", delete_first=True)
 
 # Load data from 'products.csv' into the 'products' table, without deleting existing records.
