@@ -3,8 +3,7 @@ import pathlib
 import sys
 import os
 
-# Import local modules
-# Get the path to the directory containing 'utils' (assuming it's one level up)
+# Get the path to the project directory (assuming it's one level up)
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
  # Add the parent directory to sys.path
 sys.path.append(parent_dir)
