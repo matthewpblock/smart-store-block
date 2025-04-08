@@ -85,3 +85,15 @@ You can see the the schema with foreign key connections in the following screens
 - ![Products table](images/products_table.png)  Products Table
 - ![Sales table](images/sales_table.png)  Sales Table
 
+## Loading into Microsoft PowerBI
+The SQLite database was connected to Microsoft PowerBI using SQLite ODBC Driver from: https://www.ch-werner.de/sqliteodbc/
+
+Queries and reports were built to comply with assigment objectives.
+### PowerBI Model View
+![Model view](images/powerbi_model_view.png)
+
+### Query results
+![Query results](images/powerbi_query_results.png)
+
+### Final Dashboard
+![Dashboard](images/powerbi_dashboard.png)
