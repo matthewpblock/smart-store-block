@@ -1,5 +1,5 @@
 # P6. BI Insights and Storytelling
-
+This separte README was established specifically to focus on the culminating analysis project with the smart_store dataset. Instructions for project set up and ETL can be found at https://github.com/matthewpblock/smart-store-block/blob/main/README.md
 
 ## Section 1. The Business Goal
 Operational Objective: Build a targeted marketing that increases profits.  
@@ -27,6 +27,6 @@ Analysis is being done within PowerBI to increase skill with this tool, both for
 
 ## Section 6: Suggested Business Action 
         What actions are recommended based on your work
-        
+
 ## Section 7. Challenges
         Mention any challenges you encountered and how they were resolved.

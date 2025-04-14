@@ -1,4 +1,6 @@
 # Smart-Store-Block
+For P6 assignment details, see https://github.com/matthewpblock/smart-store-block/blob/main/P6_README.md
+
 ## Description
 This project was created for the Business Intelligence and Analytics course under the instruction of Dr. Denise Case as part of the M.S. in Data Analytics program at Northwest Missouri State University.  
 It builds a data warehouse using python and SQL scripts to Extract, Transform, and Load data originating in multiple CSVs to an sqlite database.
