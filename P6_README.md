@@ -80,12 +80,20 @@ The y-axis is expressed as percentages of the whole for each data point in order
 - Hermione Granger and William White are above average in all three categories and disproportionately generate profits. **These are the most valuable customers.**
 - Dan Brown, Jason Bourne, and Tony Stark all generate disproportionately small profits compared to their purchases. **Promoting the highest-profit item to these customers may bring in more profit.**
 
-## Section 5. Results
-Present your insights with narrative and visualizations.
-Explain any suggested actions based on the results you uncovered.
+## Section 5. Results Recap
+- The West and North regions sell substantially fewer laptops and could be the regions to target for increased laptop sales to increase profits.
+- Store 402 is high on profit, but lower on transaction numbers. **This store may benefit from marketing to increase number of transactions.**
+- Stores 405, 406, and especially 403 have high transaction numbers, but lower profits. **These stores would benefit from marketing promoting laptops to their existing customer base.**
+- A dimension table with store data might be a useful addition to our data warehouse.
+- Hermione Granger and William White are the most valuable customers. Market to them as you would to your VIPs.
+- Dan Brown, Jason Bourne, and Tony Stark all generate disproportionately small profits compared to their purchases. **Promoting laptops to these customers may bring in more profit.**  
 
 ## Section 6: Suggested Business Action 
-        What actions are recommended based on your work
+1. Establish regional marketing campaigns promoting laptop sales targeting the North and West regions.
+2. Recognize VIP customers to promote continued customer relationship.
+3. Send personalized marketing promoting laptops to low-profit customers.
+4. Build `stores` table into data warehouse to enable analysis of what store characteristics correlate to success.
+5. Review ETL filtering decisions. Some data may have been inappropriately filtered as outliers, possibly impacting the conclusions drawn here.
 
 ## Section 7. Challenges
         Mention any challenges you encountered and how they were resolved.
