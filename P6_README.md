@@ -62,6 +62,19 @@ Seeing this, we know the East region is in fact selling more laptops per custome
 #### Missing Data
 Sidebar: These graphs contain a section titled "blank" where the region is unknown. Because we filtered outliers earlier in the project with customer ages outside a given range, some sales have a `customer_id` but there is no corresponding record in the `customers` table. This should spur a review of the reasons for the filtering, as some customer data may have been inappropriately filtered. Alternatively, if the customers in question are too young to be legally marketed to online it would make sense to ignore the "blank" column for our objective. For this academic project, I pressed forward without relitigating the outlier filters.
 
+### More Segmentation Options
+We've found some opportunity to target marketing by region. Our analytical objective also identified that we should look at store and customer level data for potential targeting options as well.
+#### Store-level data
+To examine store-level data, I looked at the number of transactions sliced out by store and the amount of profit sliced out by store:  
+![Store-level data](p6_images/store_data.png)  
+- Store 401 leads the way in both categories
+- Store 402 is high on profit, but lower on transaction numbers. **This store may benefit from marketing to increase number of transactions.**
+- Stores 405, 406, and especially 403 have high transaction numbers, but lower profits. **These stores would benefit from marketing promoting laptops to their existing customer base.**
+- Store 404 is a low-performer in both transaction numbers and profit.  
+- 
+    Caveat: Without amplifying information on these stores, it is difficult to assess what qualities of a store might lead to strong or poor performance. **A dimension table with store data might be a useful addition to our data warehouse.**
+#### Customer-level data
+
 
 
 ## Section 5. Results
