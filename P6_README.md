@@ -47,7 +47,13 @@ LOOKUPVALUE(
 )
 ```
 ![Adding new quantity and sale_profit columns](p6_images/sale_profit.png)
-### 
+### Most Profitable Products
+Now that the required data points exist, I started analysis by looking to see which products were driving the most profits, with the notion that promoting high-profit products could move the needle faster. If there's a segment of our customer base who haven't bought our high-profit products yet, that could be low-hanging-fruit for targeted marketing. One product stood out:  
+![Most Profitable Products](p6_images/laptop_profits.png)  
+The slice for laptops looms over all other products; it is clearly the most profitable product. Using the Legend colors in the stacked column graph to dice out by `region` it also becomes apparent that not all regions are buying laptops evenly. **Regions with low laptop sales may benefit from targeted laptop marketing.**
+
+
+
 
 ## Section 5. Results
 Present your insights with narrative and visualizations.
