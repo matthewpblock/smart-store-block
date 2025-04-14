@@ -8,6 +8,7 @@ Initial options for targeting segmentation:
 - By region
 - By store
 - Personalized down to the individual customer  
+
 Emphasis: Analysis should focus on profit, not gross revenue.
 
 ## Section 2. Data Source
@@ -21,7 +22,7 @@ Analysis is being done within PowerBI to increase skill with this tool, both for
 #TODO Describe the dimensions and aggregations - the logic needed for your analysis
 ### Profit Margin
 To meet the objective of focusing on profits over gross revenue, a new calculated data point was required. Column `profit_margin` was created in the `products` table by subtracting `wholesale_price` from `unit_price`.  
-![Adding new profit_margin column](p_6images/profit_margin.png)
+![Adding new profit_margin column](p6_images/profit_margin.png)
 ### Profit per Transaction
 Because the `sales` table records contain varying quantities of items sold, a new calculated data point for `quantity` was also required. This was created by dividing the `sale_amount` from the `sales` table by the `unit_price` from the `products` table for the corresponding `product_id` using the formula:  
 ```
@@ -45,9 +46,8 @@ LOOKUPVALUE(
     sales[product_id]
 )
 ```
-![Adding new quantity and sale_profit columns](p_6images/sale_profit.png)
-
-If using a graphical tool like Power BI or Tableau Prep, use screenshots to show your work. 
+![Adding new quantity and sale_profit columns](p6_images/sale_profit.png)
+### 
 
 ## Section 5. Results
 Present your insights with narrative and visualizations.
